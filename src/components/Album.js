@@ -159,18 +159,16 @@ class Album extends Component {
             <col id="song-title-column" />
             <col id="song-duration-column" />
           </colgroup>
-          <tbody>
-            <section className="song-list">
-              {
-                this.state.album.songs.map( (song, index) =>
-                  <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHover(index)} onMouseLeave={() => this.handleUnhover(index)} >
-                    <td className="hover-icon">{this.hovering(song, index)}</td>
-                    <td className="song-title">{song.title}</td>
-                    <td className="song-duration">{this.formatTime(song.duration)} seconds</td>
-                  </tr>
-               )
-             }
-            </section>
+          <tbody className="song-list">
+            {
+              this.state.album.songs.map( (song, index) =>
+                <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHover(index)} onMouseLeave={() => this.handleUnhover(index)} >
+                  <td className="hover-icon">{this.hovering(song, index)}</td>
+                  <td className="song-title">{song.title}</td>
+                  <td className="song-duration">{this.formatTime(song.duration)} seconds</td>
+                </tr>
+             )
+           }
           </tbody>
         </table>
         <PlayerBar
