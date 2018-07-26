@@ -132,7 +132,10 @@ class Album extends Component {
 
   formatTime(time) {
     const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
+    var seconds = Math.floor(time % 60);
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
     const songTime = minutes + ":" + seconds;
     if (songTime) {
       return songTime;
@@ -165,7 +168,7 @@ class Album extends Component {
                 <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleHover(index)} onMouseLeave={() => this.handleUnhover(index)} >
                   <td className="hover-icon">{this.hovering(song, index)}</td>
                   <td className="song-title">{song.title}</td>
-                  <td className="song-duration">{this.formatTime(song.duration)} seconds</td>
+                  <td className="song-duration">{this.formatTime(song.duration)}</td>
                 </tr>
              )
            }
