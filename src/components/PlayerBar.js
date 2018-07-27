@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
+import './PlayerBar.css';
 
 class PlayerBar extends Component {
   render() {
     return(
-      <section className="player-bar">
-        <section id="buttons">
+      <section className="player-bar container">
+      <div className="row">
+        <section className="c" id="buttons">
           <button id="previous" onClick={this.props.handlePrevClick} >
             <span className="ion-skip-backward"></span>
           </button>
-          <button id="play/pause" onClick={this.props.handleSongClick} >
+          <button id="play-pause" onClick={this.props.handleSongClick} >
             <span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></span>
           </button>
           <button id="next" onClick={this.props.handleNextClick} >
             <span className="ion-skip-forward"></span>
           </button>
         </section>
-        <section id="time-control">
+        <section className="row" id="time-control">
+        <div className="col-sm">
           <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
           <input
             type="range"
@@ -27,9 +30,11 @@ class PlayerBar extends Component {
             onChange={this.props.handleTimeChange}
           />
           <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
+        </div>
         </section>
-        <section id="volume-control">
-          <div className="icon ion-volume-low"></div>
+        <section className="row" id="volume-control">
+        <div className="col-sm">
+          <div className="icon ion-volume-low" id="low-vol"></div>
           <input
             type="range"
             className="seek-bar"
@@ -39,8 +44,10 @@ class PlayerBar extends Component {
             step="0.01"
             onChange={this.props.handleVolumeChange}
           />
-          <div className="icon ion-volume-high"></div>
+          <div className="icon ion-volume-high" id="high-vol"></div>
+        </div>
         </section>
+      </div>
       </section>
     );
   }

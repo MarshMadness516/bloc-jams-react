@@ -1,0 +1,22 @@
+.album-link:hover {
+  color: white;
+  text-shadow: 0px 0px 2px white;
+  text-decoration: none;
+}
+
+.cover-image {
+  margin: 5px;
+}
+
+.info {
+  padding: 100px;
+  color: #15315e;
+}
+
+.info-album-title {
+  font-size: 50px;
+}
+
+.info-artist, .info-songs {
+  font-size: 30px;
+}

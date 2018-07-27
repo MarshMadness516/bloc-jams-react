@@ -1,25 +1,38 @@
+.landing {
+  /*border: 2px solid black;*/
+  color: #15315e;
+}
 
+.hero-title {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  /*margin-left: 100px;*/
+}
 
 .point-one {
-  float: left;
-  width: 20%;
-  border: 2px solid black;
-  padding: 10px;
+  /*border: 2px solid black;*/
+  border-radius: 5px;
+  padding: 60px;
   margin: 10px;
+  background: radial-gradient(#f98525 25%, transparent 75%);
 }
 
 .point-two {
-  float: right;
-  width: 20%;
-  border: 2px solid black;
-  padding: 10px;
+  /*border: 2px solid black;*/
+  border-radius: 5px;
+  padding: 60px;
   margin: 10px;
+  background: radial-gradient(#f98525 25%, transparent 75%);
 }
 
 .point-three {
-  float: left;
-  width: 50%;
-  border: 2px solid black;
-  padding: 10px;
+  /*border: 2px solid black;*/
+  border-radius: 5px;
+  padding: 60px;
   margin: 10px;
+  background: radial-gradient(#f98525 25%, transparent 75%);
+}
+
+.point-one:hover, .point-two:hover, .point-three:hover {
+  background: radial-gradient(#bbd2e8 25%, transparent 75%);
 }

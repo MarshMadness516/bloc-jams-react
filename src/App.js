@@ -8,13 +8,18 @@ import Album from './components/Album';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header>
-          <nav>
-            <Link to='/'>Landing</Link>
-            <Link to='/library'>Library</Link>
+      <div className="App container-fluid">
+        <header className="page-header">
+          <nav className="row">
+            <h1 className="main-title col-sm"><ion-icon name="microphone"></ion-icon>Bloc Jams</h1>
+
+            <div className="home-link">
+              <Link to='/'><button className="link">Home</button></Link>
+            </div>
+            <div className="library-link">
+              <Link to='/library'><button className="link">Library</button></Link>
+            </div>
           </nav>
-          <h1>Bloc Jams</h1>
         </header>
         <main>
           <Route exact path="/" component={Landing} />
